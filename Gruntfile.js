@@ -12,7 +12,7 @@ module.exports = function(grunt) {
     var files = grunt.file.expand('text/*.md');
     var raw, cooked, name;
     var $ = cheerio.load(grunt.file.read('index.html'), {
-      xmlMode: true
+      xmlMode: false
     });
     for(var i=0,l=files.length;i<l;++i) {
       name = path.basename(files[i], '.md');
