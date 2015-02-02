@@ -3,6 +3,9 @@ var path = require('path');
 var marked = require('marked');
 var cheerio = require('cheerio');
 
+var mainPort = {{PORT}};
+var livereloadPort = {{LR_PORT}};
+
 var folderMount = function folderMount(connect, point) {
   return connect.static(path.resolve(point));
 };
@@ -43,9 +46,9 @@ module.exports = function(grunt) {
       server : {
         options : {
           base : '.',
-          port : 4949,
+          port : mainPort,
           hostname : '*',
-          livereload : 4948
+          livereload : livereloadPort
         }
       }
     },
@@ -70,27 +73,27 @@ module.exports = function(grunt) {
         files : ['js/**/*.js',],
         tasks : ['jshint:all'],
         options : {
-          livereload : 4948
+          livereload : livereloadPort
         }
       },
       stylus : {
         files : ['stylus/**/*.styl'],
         tasks : ['stylus:dev'],
         options : {
-          livereload : 4948
+          livereload : livereloadPort
         }
       },
       html : {
         files : ['./**/*.html'],
         options : {
-          livereload : 4948
+          livereload : livereloadPort
         }
       },
       md : {
         files : ['./text/*.md'],
         tasks : ['parseMd'],
         options : {
-          livereload : 4948
+          livereload : livereloadPort
         }
       }
     }

@@ -8,4 +8,4 @@ To get this repo up and running, you'll want to run `npm install` to get everyth
 
 ## Viewing
 
-By default, once you run `grunt`, the local server will be running at port 4949, with a complimentary livereload server at 4948, so you can view the project [at this link](http://localhost:4949).
+By default, once you run `grunt`, the local server will be running at port {{PORT}}, with a complimentary livereload server at {{LR_PORT}}, so you can view the project [at this link](http://localhost:{{PORT}}).
